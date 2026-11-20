@@ -1,1 +1,100 @@
+# Data Preparation Tasks
 
+## Name: — Dataset Loading & Exploration
+
+**Responsibilities:**
+
+### 1. Dataset Loading
+- Download the Animals-10 dataset from Hugging Face.
+- Load the dataset into Google Colab.
+- Organize the dataset into its corresponding animal classes.
+- Identify all 10 classes.
+- Verify that the images can be accessed and read correctly.
+
+### 2. Dataset Exploration
+- Calculate the total number of images.
+- Count the number of images in each class.
+- Analyze the class distribution and identify possible class imbalance.
+- Check the dimensions of the images.
+- Identify corrupted or unreadable images.
+
+**Deliverables:**
+- Dataset loading code.
+- Dataset statistics.
+- Class distribution information.
+- Image dimensions and data quality report.
+
+---
+
+## Name:Ahmed Abd-Elmohsen — Data Preprocessing & Splitting
+
+**Responsibilities:**
+
+### 1. Image Preprocessing
+- Resize all images to a fixed size (128 × 128).
+- Normalize pixel values to the range [0, 1].
+- Encode animal class labels into numerical values.
+- Ensure that images and their corresponding labels are correctly matched.
+- Verify that all processed images have consistent dimensions and formats.
+
+### 2. Dataset Splitting
+- Split the dataset into three subsets:
+  - Training Set: 70%
+  - Validation Set: 15%
+  - Testing Set: 15%
+- Use stratified splitting to maintain class distribution across all subsets.
+- Verify that there is no overlap between the three subsets.
+- Ensure that the test set remains separate from the training process.
+
+**Deliverables:**
+- Image preprocessing code.
+- Label encoding implementation.
+- Dataset splitting code.
+- Prepared Training, Validation, and Testing datasets.
+
+---
+
+## Name:  — Data Visualization & Augmentation
+
+**Responsibilities:**
+
+### 1. Dataset Visualization
+- Display sample images from each animal class.
+- Create a bar chart showing the number of images in each class.
+- Visualize the dataset distribution.
+- Display examples of image variations, such as different backgrounds, lighting, and angles.
+
+### 2. Data Augmentation
+- Apply suitable augmentation techniques to the training images, such as:
+  - Horizontal Flip.
+  - Rotation.
+  - Zoom.
+  - Translation.
+- Display examples of images before and after augmentation.
+- Ensure that augmentation is applied to the Training Set only.
+- Keep Validation and Testing datasets unchanged.
+
+**Deliverables:**
+- Dataset visualization code.
+- Class distribution charts.
+- Data augmentation implementation.
+- Before-and-after augmentation examples.
+
+---
+
+## Collaboration & Dependencies
+
+1. Student 1 must provide the loaded dataset and exploration results before preprocessing begins.
+2. Student 3 can start dataset visualization as soon as the dataset and initial statistics are available.
+3. Student 2 must coordinate with the CNN team to confirm the required input image dimensions.
+4. Student 2 must complete dataset splitting before Student 3 applies augmentation.
+5. All students must verify the final prepared dataset before handing it over to the CNN Model Development team.
+
+## Final Output
+
+A clean and properly prepared dataset containing:
+- Training Set.
+- Validation Set.
+- Testing Set.
+
+The dataset must be ready for CNN model development and training.
