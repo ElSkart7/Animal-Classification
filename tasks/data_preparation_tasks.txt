@@ -5,7 +5,7 @@
 **Responsibilities:**
 
 ### 1. Dataset Loading
-- Download the Animals-10 dataset from Hugging Face.
+- Download the Animals-10 dataset from Hugging Face or Kaggle.
 - Load the dataset into Google Colab.
 - Organize the dataset into its corresponding animal classes.
 - Identify all 10 classes.
