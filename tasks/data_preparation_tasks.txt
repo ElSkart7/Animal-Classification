@@ -1,5 +1,6 @@
 # Data Preparation Tasks
 
+--- Ahmed Abd-Elmohsen ---
 ## Student 1 — Dataset Loading & Exploration
 
 **Responsibilities:**
@@ -25,7 +26,7 @@
 - Image dimensions and data quality report.
 
 ---
-
+--- Menna --- 
 ## Student 2 — Data Visualization
 
 **Responsibilities:**
@@ -43,7 +44,7 @@
 - Visual analysis of the dataset.
 
 ---
-
+--- Shahd ---
 ## Student 3 — Data Preprocessing & Splitting
 
 **Responsibilities:**
