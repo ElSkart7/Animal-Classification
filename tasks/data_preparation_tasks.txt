@@ -24,8 +24,8 @@
 - Dataset statistics.
 - Class distribution information.
 - Image dimensions and data quality report.
-
----
+NOTE:COMPLETED✅✅
+------------------------------------------------------------------------------------------------------
 --- Menna --- 
 ## Student 2 — Data Visualization
 
@@ -43,7 +43,7 @@
 - Class distribution charts.
 - Visual analysis of the dataset.
 
----
+------------------------------------------------------------------------------------------------------
 --- Shahd ---
 ## Student 3 — Data Preprocessing & Splitting
 
@@ -71,7 +71,7 @@
 - Dataset splitting code.
 - Prepared Training, Validation, and Testing datasets.
 
----
+------------------------------------------------------------------------------------------------------
 
 ## Ahmed essam — Data Augmentation
 
