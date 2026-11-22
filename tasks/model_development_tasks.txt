@@ -1,1 +1,120 @@
+# CNN Model Development Tasks
 
+---
+
+## Student 1 — CNN Architecture (`cnn_architecture.py`)
+
+**Responsibilities:**
+
+### 1. Architecture Design
+
+- Build a baseline CNN from scratch using TensorFlow/Keras.
+- Set the input shape to `128 × 128 × 3` for RGB images.
+- Use three convolution and max-pooling blocks with 32, 64, and 128 filters.
+- Add a global average pooling layer and a dense layer with 64 units.
+- Add an output layer with 10 units and softmax activation, one for each animal class.
+
+### 2. Architecture Verification
+
+- Use `model.summary()` to check the layer shapes.
+- Pass a sample image through the model and verify that it returns 10 probabilities.
+
+**Deliverables:**
+
+- `cnn_architecture.py` containing the `build_cnn()` function.
+- Model summary and sample output shape.
+
+---
+
+## Student 2 — Model Compilation (`model.py`)
+
+**Responsibilities:**
+
+- Import `build_cnn()` from `cnn_architecture.py`.
+- Confirm the label format and class order with the Data Preparation team.
+- Compile the model using the Adam optimizer and accuracy as a metric.
+- Use sparse categorical cross-entropy for integer labels or categorical cross-entropy for one-hot labels.
+- Verify that `create_model()` returns a compiled model that Student 3 can train.
+
+**Deliverables:**
+
+- `model.py` containing the `create_model()` function.
+- A short record of the optimizer, loss function, and metric used.
+
+---
+
+## Mohamed Sameh — Baseline Training (`train.py`)
+
+**Responsibilities:**
+
+### 1. Training Setup
+
+- Load the training and validation sets prepared by the Data Preparation team.
+- Confirm that the images are `128 × 128 × 3` and already normalized to `[0, 1]`.
+- Confirm that data augmentation is used only for the training set.
+- Run one epoch in Google Colab to verify that the images, labels, and model work together.
+
+### 2. Baseline Training
+
+- Train the baseline CNN using the training set and monitor its performance on the validation set.
+- Record training and validation accuracy and loss.
+- Save the trained model in `.keras` format.
+
+**Deliverables:**
+
+- `train.py` and the saved baseline model.
+- Training history and plots of accuracy and loss.
+
+---
+
+## Student 4 — Model Evaluation (`evaluation.py`)
+
+**Responsibilities:**
+
+- Load the saved model and generate predictions.
+- Match the predicted class indices to the class names supplied by the Data Preparation team.
+- Check the evaluation code using the validation set while model development is in progress.
+- Evaluate the selected model on the held-out test set after the team finishes model selection.
+- Report test accuracy and loss, and create a confusion matrix showing which animal classes the model confuses most often.
+
+**Deliverables:**
+
+- `evaluation.py`.
+- Final test accuracy and loss.
+- A labeled confusion matrix and a short summary of common classification errors.
+
+---
+
+## Ahmed Enayet — Hyperparameter Tuning (`hyperparameter_tuning.py`)
+
+**Responsibilities:**
+
+- Use the baseline training results as the reference for tuning.
+- Start by testing a small number of learning rates. Change one setting at a time so the results are easier to interpret.
+- Keep the same training and validation splits across runs. Use the same training budget for the runs being compared.
+- Record the settings and validation results for each run.
+- Select the best configuration using a consistent validation metric and pass the selected model to Student 4 for final testing.
+
+**Deliverables:**
+
+- `hyperparameter_tuning.py`.
+- A comparison table of configurations and validation results.
+- The selected configuration and its saved `.keras` model.
+
+---
+
+## Collaboration & Dependencies
+
+1. The Data Preparation team hands over the **70% training, 15% validation, and 15% test sets**, along with the label format, the class index-to-name mapping, and the augmentation setup.
+2. Students 1 and 2 agree on the `build_cnn()` interface so they can work in parallel. Student 2 then hands `create_model()` over to Mohamed Sameh.
+3. Mohamed Sameh shares the baseline model and training results with Ahmed Enayet & .
+4. Student 4 can prepare the evaluation code while the baseline is training. Ahmed Enayet starts tuning once the baseline results are available.
+5. Ahmed Enayet selects the model using validation results. Student 4 then runs the final evaluation on the test set.
+
+## Final Output
+
+- Five Python files covering architecture, model compilation, training, evaluation, and tuning.
+- A trained baseline model and a saved copy of the selected model.
+- Training curves, a tuning comparison table, and final test results with a confusion matrix.
+
+[TensorFlow Image Classification Guide](https://www.tensorflow.org/tutorials/images/classification) · [Keras Model Training APIs](https://keras.io/api/models/model_training_apis/) · [KerasTuner Guide](https://keras.io/keras_tuner/getting_started/)
