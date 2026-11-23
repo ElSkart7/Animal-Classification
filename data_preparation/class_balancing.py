@@ -1,23 +1,33 @@
 
 import numpy as np
-from collections import Counter
 
 
-def calculate_class_weights(labels):
+def create_balanced_indices(labels, random_state=42):
     """
-    Calculate class weights based on class frequencies.
+    Oversample minority classes until all classes
+    have the same number of samples.
     """
 
-    class_counts = Counter(labels)
-    total_samples = len(labels)
-    num_classes = len(class_counts)
+    rng = np.random.default_rng(random_state)
+    labels = np.asarray(labels)
 
-    class_weights = {}
+    classes, counts = np.unique(labels, return_counts=True)
+    target_count = counts.max()
 
-    for class_id, count in class_counts.items():
-        class_weights[class_id] = (
-            total_samples / (num_classes * count)
+    balanced_indices = []
+
+    for class_id in classes:
+        class_indices = np.where(labels == class_id)[0]
+
+        sampled_indices = rng.choice(
+            class_indices,
+            size=target_count,
+            replace=True
         )
 
-    return class_weights
+        balanced_indices.extend(sampled_indices)
 
+    balanced_indices = np.asarray(balanced_indices)
+    rng.shuffle(balanced_indices)
+
+    return balanced_indices
