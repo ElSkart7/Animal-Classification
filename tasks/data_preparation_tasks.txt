@@ -1,116 +1,92 @@
-# Data Preparation Tasks
+# Data Team — Dataset Balancing & Preparation
 
---- Ahmed Abd-Elmohsen ---
-## Student 1 — Dataset Loading & Exploration
+## Ahmed AbdelMohsen — Dataset Collection & Exploration
 
-**Responsibilities:**
+**Main Responsibility:** Find and collect additional animal images to solve the class imbalance problem in the original Animals-10 dataset.
 
-### 1. Dataset Loading
-- Download the Animals-10 dataset from Hugging Face.
-- Load the dataset into Google Colab.
-- Organize the dataset into its corresponding animal classes.
-- Identify all 10 animal classes.
-- Verify that images can be accessed and read correctly.
+### Tasks:
+1. Analyze the original Animals-10 dataset.
+2. Identify the number of images in each of the 10 classes.
+3. Identify minority classes (classes with fewer images).
+4. Search for additional datasets from sources such as Kaggle and Hugging Face.
+5. Collect additional images, focusing mainly on underrepresented classes.
+6. Verify that the collected images belong to the correct animal classes.
+7. Check image quality and remove corrupted or unreadable images.
 
-### 2. Dataset Exploration
-- Calculate the total number of images.
-- Count the number of images in each class.
-- Analyze class distribution and identify possible class imbalance.
-- Check image dimensions.
-- Identify corrupted or unreadable images.
+### Deliverables:
+- Original dataset statistics.
+- Additional datasets and their sources.
+- Number of collected images per class.
+- Dataset exploration report.
 
-**Deliverables:**
-- Dataset loading code.
-- Dataset statistics.
-- Class distribution information.
-- Image dimensions and data quality report.
-NOTE:COMPLETED✅✅
-------------------------------------------------------------------------------------------------------
---- Menna --- 
-## Student 2 — Data Visualization
+---------------------------------------------------------------------------------------------------------------
 
-**Responsibilities:**
+## Menna — Dataset Analysis & Balancing Strategy
 
-- Display sample images from each animal class.
-- Create a bar chart showing the number of images in each class.
-- Visualize the dataset distribution.
-- Display examples of image variations, such as different backgrounds, lighting, and angles.
-- Create visualizations that help understand the dataset.
+**Main Responsibility:** Analyze the original and additional datasets and determine how to balance the 10 classes.
 
-**Deliverables:**
-- Dataset visualization code.
-- Sample image grids.
-- Class distribution charts.
-- Visual analysis of the dataset.
+### Tasks:
+1. Analyze the distribution of the original dataset.
+2. Analyze the distribution of the newly collected images.
+3. Compare the number of images in each class before and after adding new data.
+4. Calculate how many additional images are needed for each minority class.
+5. Identify classes that already have sufficient images.
+6. Create a balancing plan that aims for a more reasonable class distribution.
+7. Generate charts showing the distribution before and after balancing.
 
-------------------------------------------------------------------------------------------------------
---- Shahd ---
-## Student 3 — Data Preprocessing & Splitting
+### Deliverables:
+- Before-and-after class distribution charts.
+- Balancing plan.
+- Number of images per class.
+- Dataset balancing report.
 
-**Responsibilities:**
+---------------------------------------------------------------------------------------------------------------
 
-### 1. Image Preprocessing
-- Resize all images to a fixed size (128 × 128).
-- Normalize pixel values to the range [0, 1].
-- Encode animal class labels into numerical values.
-- Ensure that images and their corresponding labels are correctly matched.
-- Verify that all processed images have consistent dimensions and formats.
+## Mohamed Sameh — Data Integration, Cleaning & Preprocessing
 
-### 2. Dataset Splitting
-- Split the dataset into three subsets:
-  - Training Set: 70%
-  - Validation Set: 15%
-  - Testing Set: 15%
-- Use stratified splitting to maintain class distribution across all subsets.
-- Verify that there is no overlap between the three subsets.
-- Keep the test set separate from the training process.
+**Main Responsibility:** Combine the original and additional datasets and prepare them for model training.
 
-**Deliverables:**
-- Image preprocessing code.
-- Label encoding implementation.
-- Dataset splitting code.
-- Prepared Training, Validation, and Testing datasets.
+### Tasks:
+1. Combine the original dataset with the additional collected images.
+2. Standardize class names and label mappings.
+3. Remove duplicate images.
+4. Remove invalid or corrupted images.
+5. Resize all images to 128×128 pixels.
+6. Normalize images using the same preprocessing method expected by the model.
+7. Split the dataset into:
+   - Training: 70%
+   - Validation: 15%
+   - Testing: 15%
+8. Use stratified splitting to preserve class distribution.
+9. Ensure there is no overlap or data leakage between the splits.
 
-------------------------------------------------------------------------------------------------------
+### Deliverables:
+- Dataset integration code.
+- Cleaning and preprocessing code.
+- Label mapping.
+- Prepared training, validation, and testing datasets.
 
-## Ahmed essam — Data Augmentation
+---------------------------------------------------------------------------------------------------------------
 
-**Responsibilities:**
+## Ahmed Essam — Data Augmentation & Final Dataset Verification
 
-- Understand the purpose of data augmentation in image classification.
-- Apply suitable augmentation techniques to training images, such as:
-  - Horizontal Flip.
-  - Rotation.
-  - Zoom.
-  - Translation.
-- Configure suitable augmentation parameters.
-- Display examples of images before and after augmentation.
-- Ensure that augmentation is applied to the Training Set only.
-- Keep Validation and Testing datasets unchanged.
-- Verify that augmented images still represent their original animal classes correctly.
+**Main Responsibility:** Improve training data diversity and verify that the final dataset is ready for model training.
 
-**Deliverables:**
-- Data augmentation implementation.
-- Augmentation configuration.
-- Before-and-after image examples.
-- Augmented training data ready for CNN training.
+### Tasks:
+1. Apply data augmentation to the training set only.
+2. Use suitable techniques:
+   - Horizontal Flip
+   - Rotation
+   - Zoom
+   - Width/Height Shift
+3. Avoid applying augmentation to validation and test sets.
+4. Verify image dimensions and labels.
+5. Check the final class distribution.
+6. Confirm that all 10 classes are represented correctly.
+7. Prepare the final dataset package for the Model Team.
 
----
-
-## Collaboration & Dependencies
-
-1. Student 1 must provide the loaded dataset before the other tasks can proceed.
-2. Student 2 can start visualization once the dataset is available. Initial class-distribution charts can be created after Student 1 provides the statistics.
-3. Student 3 must coordinate with the CNN team to confirm the required input image dimensions.
-4. Student 3 must complete preprocessing and dataset splitting before Student 4 applies augmentation.
-5. Student 4 must apply augmentation to the Training Set only.
-6. All students must verify the final prepared dataset before handing it over to the CNN Model Development team.
-
-## Final Output
-
-A clean and properly prepared dataset containing:
-- Training Set.
-- Validation Set.
-- Testing Set.
-
-The dataset must be ready for CNN model development and training.
+### Deliverables:
+- Data augmentation code and configuration.
+- Before-and-after augmentation examples.
+- Final dataset statistics.
+- Final verified dataset ready for training.
